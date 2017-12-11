@@ -5,6 +5,7 @@
             [day8.re-frame.trace.view.app-db :as app-db]
             [day8.re-frame.trace.view.traces :as traces]
             [day8.re-frame.trace.view.subs :as subs]
+            [day8.re-frame.trace.view.epoch :as epoch]
             [re-frame.trace]
             [reagent.core :as r]
             [day8.re-frame.trace.utils.re-com :as rc]))
@@ -34,9 +35,10 @@
       :children
       [[rc/h-box
         :children
-        [(tab-button :traces "Traces")
+        [(tab-button :epoch "Epoch")
          (tab-button :app-db "App DB")
-         (tab-button :subs "Subs")]]
+         (tab-button :subs "Subs")
+         (tab-button :traces "Traces")]]
        [rc/h-box
         :align :center
         :children
@@ -69,4 +71,5 @@
        :traces [traces/render-trace-panel traces]
        :app-db [app-db/render-state db/app-db]
        :subs [subs/subs-panel]
+       :epoch [epoch/render]
        [app-db/render-state db/app-db])]))

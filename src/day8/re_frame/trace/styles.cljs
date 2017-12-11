@@ -5,7 +5,8 @@
             [garden.color :as color]
             [garden.selectors :as s]
             [day8.re-frame.trace.common-styles :as common]
-            [day8.re-frame.trace.utils.re-com :as rc]))
+            [day8.re-frame.trace.utils.re-com :as rc]
+            [day8.re-frame.trace.view.epoch :as epoch]))
 
 (def background-blue common/background-blue)
 (def background-gray common/background-gray)
@@ -329,6 +330,7 @@
                         :width          (px 16)
                         :padding        "0 2px"
                         :vertical-align "middle"}]
+   epoch/css
    ])
 
 
